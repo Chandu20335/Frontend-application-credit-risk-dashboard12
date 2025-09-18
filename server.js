@@ -5,6 +5,11 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(cors({
+  origin: ["https://frontend-application-credit-risk-da.vercel.app/"], // apna Vercel URL daalo
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // In-memory JSON data
 let customers = [
